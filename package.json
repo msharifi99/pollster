@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "craco-alias": "^2.1.1",
     "craco-sass-resources-loader": "^1.1.0"
   }
 }
