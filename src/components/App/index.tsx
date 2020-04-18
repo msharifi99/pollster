@@ -1,12 +1,17 @@
-import React from 'react';
-import './App.scss';
+import React from "react";
+
+import useToggle from "@/hooks/useToggle";
+
+import Widget from "../Widget";
+import Screen from "../Screen";
+import "./App.scss";
 
 function App() {
+  const { state, toggle } = useToggle(false);
   return (
-    <div className="App">
-        <p data-testid="welcome-text">
-          Welcome to Pollster
-        </p>
+    <div className="app">
+      <Widget widgetClickHandler={toggle} />
+      <Screen isOpen={state} closeClickHandler={toggle} />
     </div>
   );
 }
