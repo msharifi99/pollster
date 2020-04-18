@@ -1,6 +1,5 @@
 import React, { ChangeEvent } from "react";
 import "./index.scss";
-
 interface TextInputProps {
   placeholder: string;
   value: string;
@@ -13,7 +12,7 @@ export default function TextInput({
   onTextChange,
 }: TextInputProps) {
   const changeInputHandler = (event: ChangeEvent) => {
-    const newValue = (event.target as HTMLInputElement).value|| "";
+    const newValue = (event.target as HTMLInputElement).value || "";
     onTextChange(newValue);
   };
 
