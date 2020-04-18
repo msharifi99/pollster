@@ -4,7 +4,7 @@ export default function mockServer<T>(
 ): Promise<T> {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      shouldReject ? resolve(response) : reject(response);
+      !shouldReject ? resolve(response) : reject(response);
     }, 1000);
   });
 }
