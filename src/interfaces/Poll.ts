@@ -3,6 +3,7 @@ export interface Poll {
 }
 
 export interface PollInput {
+  id: number,
   type: 'text';
   label: string
 }
