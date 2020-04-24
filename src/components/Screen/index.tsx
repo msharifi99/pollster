@@ -1,6 +1,7 @@
 import React, { useState, useEffect, FunctionComponent } from "react";
 import getPoll from "@/api/getPoll";
 import TextInput from "../TextInput";
+import Button from "../Button";
 import { PollInput } from "@/interfaces/Poll";
 
 import "./index.scss";
@@ -39,6 +40,9 @@ const Screen: FunctionComponent<ScreenProps> = ({
             onTextChange={setName}
           />
         ))}
+      </div>
+      <div className="screen__actions">
+        <Button onClick={() => {}}>Submit</Button>
       </div>
     </div>
   );
