@@ -10,6 +10,7 @@ interface TextInputProps {
 const TextInput: CustomFC<TextInputProps> = ({
   placeholder,
   value,
+  className,
   onTextChange,
 }) => {
   const changeInputHandler = (event: ChangeEvent) => {
@@ -19,7 +20,7 @@ const TextInput: CustomFC<TextInputProps> = ({
 
   return (
     <input
-      className="text-input"
+      className={`text-input ${className}`}
       type="text"
       placeholder={placeholder}
       value={value}

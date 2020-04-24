@@ -31,4 +31,8 @@
     font-size: 100%;
     cursor: pointer;
   }
+
+  &__input + &__input {
+    margin-top: $small-margin;
+  }
 }

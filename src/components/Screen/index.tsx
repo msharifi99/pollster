@@ -9,6 +9,7 @@ interface ScreenProps {
   isOpen: boolean;
   closeClickHandler: () => void;
 }
+
 const Screen: FunctionComponent<ScreenProps> = ({
   isOpen,
   closeClickHandler,
@@ -31,6 +32,7 @@ const Screen: FunctionComponent<ScreenProps> = ({
       <div>
         {pollInputs.map((poll) => (
           <TextInput
+            className="screen__input"
             key={poll.id}
             placeholder={poll.label}
             value={name}
