@@ -1,4 +1,5 @@
-import React, { ChangeEvent, FunctionComponent } from "react";
+import React, { ChangeEvent } from "react";
+import CustomFC from "@/interfaces/CustomFC";
 import "./index.scss";
 interface TextInputProps {
   placeholder: string;
@@ -6,7 +7,7 @@ interface TextInputProps {
   onTextChange: (value: string) => void;
 }
 
-const TextInput: FunctionComponent<TextInputProps> = ({
+const TextInput: CustomFC<TextInputProps> = ({
   placeholder,
   value,
   onTextChange,
