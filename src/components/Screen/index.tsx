@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, FunctionComponent } from "react";
 import getPoll from "@/api/getPoll";
 import TextInput from "../TextInput";
 import { PollInput } from "@/interfaces/Poll";
@@ -9,8 +9,10 @@ interface ScreenProps {
   isOpen: boolean;
   closeClickHandler: () => void;
 }
-
-export default function Screen({ isOpen, closeClickHandler }: ScreenProps) {
+const Screen: FunctionComponent<ScreenProps> = ({
+  isOpen,
+  closeClickHandler,
+}) => {
   const [name, setName] = useState("");
   const [pollInputs, setPollInputs] = useState([] as PollInput[]);
 
@@ -18,7 +20,7 @@ export default function Screen({ isOpen, closeClickHandler }: ScreenProps) {
     getPoll().then(({ inputs }) => {
       setPollInputs(inputs);
     });
-    
+  });
 
   const screenShowingClass = isOpen ? "screen--open" : "";
   return (
@@ -38,4 +40,6 @@ export default function Screen({ isOpen, closeClickHandler }: ScreenProps) {
       </div>
     </div>
   );
-}
+};
+
+export default Screen;

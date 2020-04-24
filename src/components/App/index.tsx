@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 
 import useToggle from "@/hooks/useToggle";
 
@@ -6,7 +6,7 @@ import Widget from "../Widget";
 import Screen from "../Screen";
 import "./App.scss";
 
-function App() {
+const App: FunctionComponent = () => {
   const { state, toggle } = useToggle(false);
   return (
     <div className="app">
@@ -14,6 +14,6 @@ function App() {
       <Screen isOpen={state} closeClickHandler={toggle} />
     </div>
   );
-}
+};
 
 export default App;

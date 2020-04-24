@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, FunctionComponent } from "react";
 import "./index.scss";
 interface TextInputProps {
   placeholder: string;
@@ -6,11 +6,11 @@ interface TextInputProps {
   onTextChange: (value: string) => void;
 }
 
-export default function TextInput({
+const TextInput: FunctionComponent<TextInputProps> = ({
   placeholder,
   value,
   onTextChange,
-}: TextInputProps) {
+}) => {
   const changeInputHandler = (event: ChangeEvent) => {
     const newValue = (event.target as HTMLInputElement).value || "";
     onTextChange(newValue);
@@ -25,4 +25,6 @@ export default function TextInput({
       onChange={changeInputHandler}
     />
   );
-}
+};
+
+export default TextInput;
