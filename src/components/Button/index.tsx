@@ -4,6 +4,7 @@ import React, {
   ButtonHTMLAttributes,
 } from "react";
 import CustomFC from "@/interfaces/CustomFC";
+import "./index.scss";
 
 type ButtonEvent = MouseEvent<HTMLButtonElement>;
 type ButtonTypes = ButtonHTMLAttributes<HTMLButtonElement>["type"];
@@ -19,7 +20,7 @@ const Button: CustomFC<ButtonProp> = ({
   onClick,
 }) => {
   return (
-    <button type={nativeType} onClick={onClick}>
+    <button className="button" type={nativeType} onClick={onClick}>
       {children}
     </button>
   );
